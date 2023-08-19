@@ -32,7 +32,7 @@ const RecipeCard = ({ index, recipe, updateRecipe, deleteRecipe }) => {
         />
         <label>Ingredients:</label>
         <textarea
-          value={editedRecipe.ingredients.join('\n')}
+          value={editedRecipe.ingredients}
           onChange={(e) => handleInputChange(e, 'ingredients')}
         />
         <label>Instructions:</label>
