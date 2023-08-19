@@ -7,7 +7,6 @@ function ChatGPT() {
     const [isTyping, setIsTyping] = useState(false);
 
     useEffect(() => {
-        // Add initial assistant message when the component mounts
         const initialAssistantMessage = {
             role: 'assistant',
             text: "Hi! I'm ChefGPT. Ask me any recipe!"
@@ -28,10 +27,9 @@ function ChatGPT() {
         setIsTyping(true);
 
         const apiEndpoint = "https://api.openai.com/v1/chat/completions";
-        const apiKey = "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";  // Replace with your actual API key
-
+        const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
         const conversation = {
-            model: "gpt-4", // or "gpt-3.5-turbo"
+            model: "gpt-4",
             messages: chatMessages.concat(userMessage).map(msg => ({ role: msg.role, content: msg.text }))
         };
 
