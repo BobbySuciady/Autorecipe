@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import RecipeCard from './RecipeCard';
+import ChatGPT from './ChatGPT';
 
 function App() {
   const initialRecipes = [
@@ -47,6 +48,9 @@ function App() {
     // Save updated recipes to Local Storage
     localStorage.setItem('recipes', JSON.stringify(updatedRecipes));
   };
+  
+        
+
 
   return (
     <div className="App">
@@ -65,6 +69,7 @@ function App() {
         ))}
         <button onClick={addRecipe}>Add Recipe</button>
       </div>
+      <ChatGPT />
     </div>
   );
 }
