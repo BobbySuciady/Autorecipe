@@ -10,12 +10,10 @@ function App() {
       ingredients: ['Spaghetti', 'Eggs', 'Bacon', 'Parmesan', 'Pepper'],
       instructions: '...',
     },
-    // Add more initial recipe objects here
   ];
 
   const [recipes, setRecipes] = useState([]);
 
-  // Load recipes from Local Storage when the component mounts
   useEffect(() => {
     const savedRecipes = JSON.parse(localStorage.getItem('recipes')) || initialRecipes;
     setRecipes(savedRecipes);
@@ -29,7 +27,6 @@ function App() {
     };
     const updatedRecipes = [...recipes, newRecipe];
     setRecipes(updatedRecipes);
-    // Save updated recipes to Local Storage
     localStorage.setItem('recipes', JSON.stringify(updatedRecipes));
   };
 
@@ -37,15 +34,13 @@ function App() {
     const updatedRecipes = [...recipes];
     updatedRecipes[index] = updatedRecipe;
     setRecipes(updatedRecipes);
-    // Save updated recipes to Local Storage
     localStorage.setItem('recipes', JSON.stringify(updatedRecipes));
   };
 
   const deleteRecipe = (index) => {
     const updatedRecipes = [...recipes];
-    updatedRecipes.splice(index, 1); // Remove the recipe at the specified index
+    updatedRecipes.splice(index, 1);
     setRecipes(updatedRecipes);
-    // Save updated recipes to Local Storage
     localStorage.setItem('recipes', JSON.stringify(updatedRecipes));
   };
   
@@ -64,7 +59,7 @@ function App() {
             index={index}
             recipe={recipe}
             updateRecipe={updateRecipe}
-            deleteRecipe={deleteRecipe} // Pass the deleteRecipe function
+            deleteRecipe={deleteRecipe}
           />
         ))}
         <button onClick={addRecipe}>Add Recipe</button>
