@@ -1,0 +1,16 @@
+.recipe-card {
+    border: 1px solid #ccc;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 200px; /* Adjust as needed */
+  }
+  
+  .recipe-card-content {
+    margin-top: 12px;
+  }
+  
+  /* Additional styling for input fields, textareas, labels, buttons, etc. can be added here */
+  
