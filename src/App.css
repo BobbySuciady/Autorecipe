@@ -1,0 +1,23 @@
+.taskbar {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  background-color: #202020;
+  padding: 40px; 
+}
+
+.taskbar h1 {
+  color: #f5f5f5;
+  text-decoration: none;
+  margin: 0;
+  font-weight: bold;
+}
+
+.content {
+  background-color: #f5f5f5;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
